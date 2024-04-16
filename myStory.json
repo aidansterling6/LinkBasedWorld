@@ -1,0 +1,226 @@
+{
+    "Title": "ruinous riddles",
+    "Credits": "Game by Aidan Sterling (ailsterl@ucsc.edu).\nEngine by Adam Smith (amsmith@ucsc.edu).\nRiddles based on ones by Hedy Phillips (https://www.rd.com/article/riddles-for-adults/)",
+    "InitialLocation": "Entrance",
+    "Locations": {
+        "Entrance": {
+            "Body": "You descend the steps of the ruins of a castle into the catacombs beneath. As you descend, you arrive at a rotted-out wooden door leading to a hallway.",
+            "Choices": [
+                {
+                    "Type": "Button",
+                    "Text": "Enter Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Hallway": {
+            "Body": "The hallway is made of large stone blocks and is lined with empty sconces. The only light comes from the open entryway and your flickering torch. There are four doors lining the hallway, and at the end, you see three locked chests. Three of the doors are ajar while the fourth is reinforced with metal and has three keyholes embedded in it. What would you like to examine?",
+            "Choices": [
+                {
+                    "Type": "Button",
+                    "Text": "The First Open Door",
+                    "Target": "riddleroom1"
+                },
+                {
+                    "Type": "Button",
+                    "Text": "The Second Open Door",
+                    "Target": "riddleroom2"
+                },
+                {
+                    "Type": "Button",
+                    "Text": "The Third Open Door",
+                    "Target": "riddleroom3"
+                },
+                {
+                    "Type": "LockedButton",
+                    "keys": ["exit1", "exit2", "exit3"],
+                    "LockedText": [
+                        "The door is locked, and you do not have any of the keys.",
+                        "The door is locked, and you only have one key.",
+                        "The door is locked, and you only have two out of three keys."
+                    ],
+                    "Text": "The Locked Door",
+                    "Target": "exit"
+                },
+                {
+                    "Type": "Button",
+                    "Text": "The Three Chests",
+                    "Target": "3 Code Chests"
+                }
+            ]
+        },
+        "riddleroom1": {
+            "Body": "As you open the door, a thick mist pours through it. Your torch only penetrates a few feet, but you fund a plaque on the wall that says the following:\nI fill rooms, yet you can walk through them; all people see because of me, yet I cannot see; what am I?",
+            "Choices": [
+                {
+                    "Type": "Button",
+                    "Text": "Back to Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "riddleroom2": {
+            "Body": "Inside this room, there is nothing but a large mirror. Below the mirror, the following words are inscribed: What is you, yet isn't, Belongs to you, yet everyone else uses?",
+            "Choices": [
+                {
+                    "Type": "Button",
+                    "Text": "Back to Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "riddleroom3": {
+            "Body": "As you enter this room, it first appears as if there is nothing in it. You spot a brick in the wall that seems out of place and, when pushed, reveals a secret alcove. Inside, the following words are written: What's deafening yet makes no noise, you can't touch it yet saying its name breaks it.",
+            "Choices": [
+                {
+                    "Type": "Button",
+                    "Text": "Back to Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "3 Code Chests": {
+            "Body": "There are three chests with codes; the locks only have enough space to put in a single word each.",
+            "Choices": [
+                {
+                    "Type": "Input",
+                    "Code": "light",
+                    "CorrectMessage": "The chest clicks open, and you find a silver key inside. It feels strangely cold as you pick it up.",
+                    "CorrectMessage2": "The chest is open, and you took the key.",
+                    "WrongMessage": "The lid does not budge; that was the wrong code.",
+                    "Text": "Chest 1",
+                    "Target": "exit1_key"
+                },
+                {
+                    "Type": "Input",
+                    "Code": "name",
+                    "CorrectMessage": "The chest clicks open, and inside is a rusty iron key; as you pick it up, flakes of rust break off and fall to the ground.",
+                    "CorrectMessage2": "The chest is open, and you took the key.",
+                    "WrongMessage": "The lid does not budge; that was the wrong code.",
+                    "Text": "Chest 2",
+                    "Target": "exit2_key"
+                },
+                {
+                    "Type": "Input",
+                    "Code": "silence",
+                    "CorrectMessage": "The chest clicks open, and you find a Golden key with embedded gems; it shimmers brightly even in the dim torchlight.",
+                    "CorrectMessage2": "The chest is open, and you took the key.",
+                    "WrongMessage": "The lid does not budge; that was the wrong code.",
+                    "Text": "Chest 3",
+                    "Target": "exit3_key"
+                },
+                {
+                    "Type": "Button",
+                    "Text": "Back to Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "exit": {
+            "Body": "The door unlocks after you place all three keys into it and turn them. It creaks open and reveals a dark staircase long enough that you can't see the bottom. You passed the challenge.",
+            "Choices": [
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        "Kresge": {
+            "Body": "This is Kresge College, lots of nice trees.",
+            "Choices": [
+                {
+                    "Type": "Button",
+                    "Text": "South",
+                    "Target": "Porter"
+                },
+                {
+                    "Type": "Input",
+                    "Code": "Test",
+                    "Text": "Test",
+                    "Target": "Porter"
+                }
+            ]
+        },
+        "Porter": {
+            "Body": "This is Porter College, the trees are nice here too.",
+            "Choices": [
+                {
+                    "Type": "Button",
+                    "Text": "North",
+                    "Target": "testKey_key"
+                },
+                {
+                    "Type": "LockedButton",
+                    "key": "testKey",
+                    "LockedText": "Locked South",
+                    "Text": "South not locked",
+                    "Target": "Rachel Carson"
+                }
+            ]
+        },
+        "Rachel Carson": {
+            "Body": "Rachel Carson College, more sun and fewer trees.",
+            "Choices": [
+                {
+                    "Type": "Button",
+                    "Text": "North",
+                    "Target": "Porter"
+                },
+                {
+                    "Type": "Button",
+                    "Text": "South",
+                    "Target": "Oakes"
+                }
+            ]
+        },
+        "Oakes": {
+            "Body": "Oakes College, even the buildings have tree bark on them.",
+            "Choices": [
+                {
+                    "Type": "Button",
+                    "Text": "North",
+                    "Target": "Rachel Carson"
+                },
+                {
+                    "Type": "Button",
+                    "Text": "South",
+                    "Target": "Beyond"
+                }
+            ]
+        },
+        "Beyond": {
+            "Body": "Grass, don't forget to check for ticks!"
+        }
+    }
+}
